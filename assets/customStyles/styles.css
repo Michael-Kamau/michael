@@ -1,23 +1,20 @@
+{% load static from staticfiles %}
 
-
-#header{
-    color: #ffffff;
-    font-size: 45px;
-
-   
-}
-/* Setting the size and color for the navigation elements*/
-#nav-element{
-    color: #ffffff;
-    font-size: 20px;
-   
-}
-
-
-/*Setting the background color of the navigation bar*/
 .navbar{
-    background:#176EC9;
-    bottom: none;
+   background-color: rgba(1, 1, 1, 0.5); 
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:  #ffffff;
+    font-size: 20px;
+    padding: 15px;
+    
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:  #6e7171 ;
+}
+.navbar-dark .navbar-nav .nav-link:active {
+    color:   #6e7171 ;
 }
 
 #images{
@@ -32,35 +29,14 @@
 }
 
 
-/*Setting the background image of the website for the element with the id background image*/
 
-body{
-
-    /*font-style:italic;
-    font-size: 40px;
-    font-family: sans-serif; 
-    position:relative;
-    padding:0px;
-    background-color:#0f121f;
-    margin:0px;
-    overflow:hidden;
-    /*height:600px;*/
-    /*top:-20px;*/
-    background-image:url(/static/images/58.jpg); 
-    background-repeat:repeat;
-    /*background-size: 100% 700px;*/
-    background-position: top center;
-    background-attachment: fixed;
-    margin-top: 40px;
-    height: 100%;
-}
 a:hover {
 
-    background-color: green;
+    background-color: black;
     /*color: #ffffff;*/
-    color: black;
+    color: white;
     text-decoration: underline;
-    background-color: lightgreen;
+    background-color: black;
 }
 
 li.a {
@@ -116,6 +92,78 @@ div.desc {
     opacity:0.9;
 }
 
+
+.homeHead{
+
+
+    background: 
+        linear-gradient(
+          rgba(1, 1, 1, 0.2),
+          rgba(1, 1, 1, 0.2)
+        ),url(/static/images/road.jpg);
+    padding:60px; 
+    color: white;
+     background-repeat: no-repeat;
+     background-size:cover;
+     position: center;
+}
+
+.aboutHead{
+     background: 
+        linear-gradient(
+          rgba(1, 1, 1, 0.2),
+          rgba(1, 1, 1, 0.2)
+        ),url(/static/images/jeans.jpg);
+    padding:60px; 
+    color: white;
+     background-repeat: no-repeat;
+     background-size:cover;
+     position: center;
+   
+}
+
+.portfolioHead{
+     background: 
+        linear-gradient(
+          rgba(1, 1, 1, 0.2),
+          rgba(1, 1, 1, 0.2)
+        ),url(/static/images/sunset.jpg);
+    padding:60px; 
+    color: white;
+     background-repeat: no-repeat;
+     background-size:cover;
+     position: center;
+   
+}
+
+
+
+.contactsHead{
+     background: 
+        linear-gradient(
+          rgba(1, 1, 1, 0.2),
+          rgba(1, 1, 1, 0.2)
+        ),url(/static/images/sunset.jpg);
+    padding:60px; 
+    color: white;
+     background-repeat: no-repeat;
+     background-size:cover;
+     position: center;
+   
+}
+
+
+
+
+.card{
+    margin:20px;
+    padding-bottom: 0px;
+}
+
+.highlight{
+    background:rgba(1, 1, 1, 0.4);
+    border-color: #ffffff; 
+}
 
 
 

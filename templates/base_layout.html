@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html>
@@ -30,43 +31,60 @@
 
 
 
-	<title>Articles</title>
+	<title>Michael Kamau</title>
 	
 </head>
 <body>	
 
- <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'myapp:about' %}">About</a></li>
-        <li><a href="{%url 'myapp:applications' %}">Applications</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-       <li><a href="{% url 'myapp:contacts' %}">Contacts</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+  <nav class="navbar navbar-expand-sm  navbar-dark fixed-top" >
+  <!-- Brand/logo -->
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'images/home.jpg' %}" class="rounded" alt="logo" style="width:70px; height:70px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse " id="collapsibleNavbar">
+    
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'home' %}">Home</a>
+          </li>         
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myapp:about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'myapp:applications' %}">Portfolio</a>
+          </li>
+                 
+        </ul>
 
 
-<div class="container">
+        <div>
+
+          <ul class="navbar-nav navbar-right">      
+            <!-- The following link is only displayed if the admin is logged in so that he can remember to log out-->
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'myapp:contacts' %}">Contacts</a>
+
+            </li> 
+                  
+        </ul>
+
+
+        </div>        
+
+    </div>
+
+  </nav>
+
 
 {%  block content %}
 
 {% endblock %}
-
-</div>
 
 </body>
 </html>

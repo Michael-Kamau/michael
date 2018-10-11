@@ -6,27 +6,47 @@
 {%  block content %}
 
 
+<div class="text-center col-md-12 col-sm-12 row homeHead " style=" padding-top: 150px;  vertical-align:middle; text-align:center; min-height: 720px; align-content: middle ;">
 
-<div class="background-image">
-	
-</div>
-<div class="bg-1">
-  <div class="container text-center">
-    <h3>Who Am I?</h3>
-    <img src="{% static 'images/56.jpg' %}" class="img-circle" alt="Bird" width="350" height="350">
-    <h3>I'm a freelance programmer</h3>
+  <div class="text-center col-md-12 col-sm-12">
+    <h1 style=" font-family:Sans-serif; ">Developer</h1><br>
+     <h4 style="color:#ffffff">Websites.Android Applications.Data Analysis.API Development and more</h4>
   </div>
+
+ 
+
+    <div class="col-sm-12 col-md-1">
+    </div>
+
+
+    <div class="card col-sm-12 col-md-3 highlight">
+      <div class="card-body">        
+        <h4 class="card-title" style="opacity:1"> About</h4>
+        <p class="card-text">About me, studies and more</p>
+        <a href="{% url 'myapp:about' %}" class="btn btn-primary highlight">View More</a>
+      </div>
+    </div>
+
+
+    <div class="card col-sm-12 col-md-3 highlight">
+      <div class="card-body">        
+        <h4 class="card-title" style="opacity:1"> Portforlio</h4>
+        <p class="card-text">Contains A list of some of the Projects that i've worked on.</p>
+        <a href="{% url 'myapp:applications' %}" class="btn btn-primary highlight">View Portforlio</a>
+      </div>
+    </div>
+
+
+    <div class="card col-sm-12 col-md-3 highlight">
+      <div class="card-body">        
+        <h4 class="card-title" style="opacity:1"> Contacts</h4>
+        <p class="card-text">You can get in touch with me.</p>
+        <a href="{% url 'myapp:contacts' %}" class="btn btn-primary highlight">Contact Info</a>
+      </div>
+    </div>
 </div>
 
-<div class="container-fluid bg-2 text-center well">
-  <h3>What Am I?</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-</div>
 
-<div class="container-fluid bg-3 text-center well">
-  <h3>Where To Find Me?</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
 
 {% endblock %}
 

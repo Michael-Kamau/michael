@@ -25,7 +25,7 @@ SECRET_KEY = 't&5_$(748rhd&)fjz!nu1wrhasek$39@7*v%!$bg69sg3_*f-$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.43.93','127.0.0.1','0.0.0.0']
+ALLOWED_HOSTS = ['localhost','192.168.43.93','127.0.0.1','0.0.0.0','michaelkamau.pythonanywhere.com']
 
 
 # Application definition
@@ -52,10 +52,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'michael.urls'
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [TEMPLATE_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
