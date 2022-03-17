@@ -4,7 +4,9 @@ from django.http import HttpResponse
 
 
 def about(request):
-	return render(request,'myapp/about.html')
+	page = ''
+	context={}
+	return render(request,'myapp/about.html',context)
 
 def applications(request):
 	return render(request,'myapp/applications.html')
