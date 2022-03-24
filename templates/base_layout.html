@@ -40,11 +40,11 @@
 	
 </head>
 <body>	
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+<nav class="bg-gray-50 border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800">
   <div class="container flex  flex-wrap justify-between items-center mx-auto">
-    <a href="{% url 'home' %}" class="flex items-center">
-        <img src="{% static 'images/michael.png' %}" class="mr-3 h-6 sm:h-10" alt="Flowbite Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> </span>
+    <a href="{% url 'home' %}" class="flex items-center ">
+        <!-- <img src="{% static 'images/michael.png' %}" class=" h-8 w-8 sm:h-12 sm:w-12  rounded-full object-cover" alt="Flowbite Logo" /> -->
+        <span class="self-center text-lg text-gray-600 font-semibold whitespace-nowrap dark:text-white ml-2">Michael K. Kamau </span>
     </a>
     <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -54,24 +54,24 @@
     <div class="block w-full md:block md:w-auto" id="mobile-menu">
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
         <li>
-          <a  href="{% url 'home' %}"class="block py-2 pr-4 pl-3 {% if request.path ==   '/' %} text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white" aria-current="page">Home</a>
+          <a  href="{% url 'home' %}"class="block py-2 pr-4 pl-3 {% if request.path ==   '/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="{% url 'myapp:about' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/' %} text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">About</a>
+          <a href="{% url 'myapp:about' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">About</a>
         </li>
         <li>
-          <a href="{% url 'myapp:applications' %}"  class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/applications/' %} text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">Applications</a>
+          <a href="{% url 'myapp:applications' %}"  class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/applications/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">Applications</a>
         </li>
       
         <li>
-          <a href="{% url 'myapp:contacts' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/contacts/' %} text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">Contact</a>
+          <a href="{% url 'myapp:contacts' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/contacts/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">Contact</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container">
+<div class="">
 
 {%  block content %}
 
