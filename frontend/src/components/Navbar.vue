@@ -1,46 +1,4 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="X-UA_Compatible" content="IE=edge"/>
-<meta name="viewport" content="widh=device-width, initial-scale=1"/>
-
-
-
-    <!--Jquery-->
-     <script src="ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"> </script>
-     <script  src="{% static 'bootstrap/js/bootstrap.min.js' %}"> </script>
-     <script src="{% static 'jquery/jquery.js' %}"> </script>
- 
-    <!-- Bootstrap -->
-
-
-   
-    <script src="{% static 'bootstrap/js/jquery.min.js' %}"> </script>
-
-    
-    <!-- <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"> </script> -->
-    <!-- <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/> -->
-    
-
-      <!--Custom styleSheet-->
-
-    <!-- <link href="{% static 'customStyles/styles.css' %}" rel="stylesheet"/> -->
-
-    <!--Tailwind styleSheet-->
-
-    <!-- <link href="{% static 'css/style.css' %}" rel="stylesheet"/> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-
-
-
-	<title>Michael Kamau</title>
-	
-</head>
-<body>	
-<div id="app">
+<template>
   <nav class="bg-gray-50 border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800">
     <div class="container flex  flex-wrap justify-between items-center mx-auto">
       <a href="{% url 'home' %}" class="flex items-center ">
@@ -55,7 +13,7 @@
       <div class="block w-full md:block md:w-auto" id="mobile-menu">
         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
           <li>
-            <a  href="{% url 'home' %}"class="block py-2 pr-4 pl-3 {% if request.path ==   '/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white" aria-current="page">Home</a>
+            <a  href="{% url 'home' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white" aria-current="page">Home</a>
           </li>
           <li>
             <a href="{% url 'myapp:about' %}" class="block py-2 pr-4 pl-3 {% if request.path ==   '/about/' %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white">About</a>
@@ -71,20 +29,16 @@
       </div>
     </div>
   </nav>
-  
-  <div class="">
-  
-  {%  block content %}
-  
-  {% endblock %}
-  
-  </div>
+</template>
 
-</div>
-<noscript>
-  <strong>Please enable JavaScript for this application to work</strong>
-</noscript>
-<script type="application/javascript" src="{% static 'js/main.js' %}"></script>
+<script>
+export default {
+  name: 'Navbar',
+  props: {
+    msg: String
+  }
+}
+</script>
 
-</body>
-</html>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+
