@@ -17316,7 +17316,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Navbar',
   props: {
-    msg: String
+    active_url: String
+  },
+  data: function data() {
+    return {
+      menu_expanded: false
+    };
+  },
+  methods: {
+    toggleMenu: function toggleMenu() {
+      this.menu_expanded = !this.menu_expanded;
+    }
   }
 });
 
@@ -17360,12 +17370,70 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "bg-gray-50 border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800"
 };
+var _hoisted_2 = {
+  "class": "container flex flex-wrap justify-between items-center mx-auto"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container flex flex-wrap justify-between items-center mx-auto\"><a href=\"{% url &#39;home&#39; %}\" class=\"flex items-center\"><!-- &lt;img src=&quot;{% static &#39;images/michael.png&#39; %}&quot; class=&quot; h-8 w-8 sm:h-12 sm:w-12  rounded-full object-cover&quot; alt=&quot;Flowbite Logo&quot; /&gt; --><span class=\"self-center text-lg text-gray-600 font-semibold whitespace-nowrap dark:text-white ml-2\">Michael K. Kamau </span></a><button data-collapse-toggle=\"mobile-menu\" type=\"button\" class=\"inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600\" aria-controls=\"mobile-menu-2\" aria-expanded=\"false\"><span class=\"sr-only\">Open main menu</span><svg class=\"w-6 h-6\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z\" clip-rule=\"evenodd\"></path></svg><svg class=\"hidden w-6 h-6\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg></button><div class=\"block w-full md:block md:w-auto\" id=\"mobile-menu\"><ul class=\"flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium\"><li><a href=\"{% url &#39;home&#39; %}\" class=\"block py-2 pr-4 pl-3 {% if request.path == &#39;/&#39; %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white\" aria-current=\"page\">Home</a></li><li><a href=\"{% url &#39;myapp:about&#39; %}\" class=\"block py-2 pr-4 pl-3 {% if request.path == &#39;/about/&#39; %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white\">About</a></li><li><a href=\"{% url &#39;myapp:applications&#39; %}\" class=\"block py-2 pr-4 pl-3 {% if request.path == &#39;/about/applications/&#39; %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white\">Applications</a></li><li><a href=\"{% url &#39;myapp:contacts&#39; %}\" class=\"block py-2 pr-4 pl-3 {% if request.path == &#39;/about/contacts/&#39; %} text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700{% else %} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %} md:p-0 dark:text-white\">Contact</a></li></ul></div></div>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "/",
+  "class": "flex items-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"/static/images/michael.png\" class=\" h-8 w-8 sm:h-12 sm:w-12  rounded-full object-cover\" alt=\"Flowbite Logo\" /> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "self-center text-lg text-gray-600 font-semibold whitespace-nowrap dark:text-white ml-2"
+}, "Michael K. Kamau ")], -1
+/* HOISTED */
+);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"sr-only\">Open main menu</span><svg class=\"w-6 h-6\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z\" clip-rule=\"evenodd\"></path></svg><svg class=\"hidden w-6 h-6\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>", 3);
+
+var _hoisted_7 = [_hoisted_4];
+var _hoisted_8 = {
+  "class": "flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "data-collapse-toggle": "mobile-menu",
+    type: "button",
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.toggleMenu();
+    }),
+    "class": "inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+    "aria-controls": "mobile-menu-2",
+    "aria-expanded": "false"
+  }, _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([[_ctx.menu_expanded ? 'block' : 'hidden'], "w-full md:block md:w-auto"]),
+    id: "mobile-menu"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "/",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block py-2 pr-4 pl-3 md:p-0 dark:text-white ext-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700", {
+      ' text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700': $props.active_url == '/'
+    }]),
+    "aria-current": "page"
+  }, "Home", 2
+  /* CLASS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "/about/",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block py-2 pr-4 pl-3 md:p-0 dark:text-white ext-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700", {
+      ' text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700': $props.active_url == '/about/'
+    }])
+  }, "About", 2
+  /* CLASS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "/about/applications/",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block py-2 pr-4 pl-3 md:p-0 dark:text-white ext-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700", {
+      ' text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700': $props.active_url == '/about/applications/'
+    }])
+  }, "Applications", 2
+  /* CLASS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "/about/contacts/",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["block py-2 pr-4 pl-3 md:p-0 dark:text-white ext-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700", {
+      ' text-white bg-emerald-700 rounded md:bg-transparent md:text-emerald-700': $props.active_url == '/about/contacts/'
+    }])
+  }, "Contact", 2
+  /* CLASS */
+  )])])], 2
+  /* CLASS */
+  )])]);
 }
 
 /***/ }),
