@@ -5,7 +5,7 @@
 {% block content %}
 <div class="bg-gray-50 min-h-screen">
 	<p class="font-extralight text-2xl text-center">Contact Details</p>
-	<contact-form></contact-form>
+	<contact-form url="{% url 'myapp:contacts' %}" csrf_token="{{ csrf_token }}"/>
 	
 <div  class="bg-gradient-to-r from-sky-800 to-green-800 m-2 rounded-xl ">
   
