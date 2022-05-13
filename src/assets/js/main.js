@@ -19813,14 +19813,25 @@ __webpack_require__.r(__webpack_exports__);
           "X-CSRFToken": this.csrf_token
         }
       }).then(function (response) {
-        console.log("And this is the response from the server on sending the email");
-        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-          title: "Success",
-          text: "Your email has been sent",
-          icon: "success",
-          confirmButtonText: "Okay",
-          confirmButtonColor: "#097969"
-        });
+        console.log('And this is the response from the server ', response);
+
+        if (response.data.success) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            title: "Success",
+            text: "Your email has been sent",
+            icon: "success",
+            confirmButtonText: "Done",
+            confirmButtonColor: "#097969"
+          });
+        } else {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+            title: "Error",
+            text: "Error encountered sending your email",
+            icon: "error",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#932958"
+          });
+        }
       })["finally"](function () {
         _this.loading = false;
         _this.contact_form = {};
