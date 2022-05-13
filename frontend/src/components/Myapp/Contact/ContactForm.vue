@@ -319,7 +319,14 @@
               ></textarea>
             </label>
             <div class="mb-6">
+              <span
+                class="text-green-800 pl-2 font-light animate-pulse duration-100"
+                v-if="loading"
+                >Sending email ...</span
+              >
+
               <button
+                v-else
                 type="submit"
                 class="h-10 px-5 text-green-100 bg-green-700 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-green-800"
               >
@@ -336,6 +343,8 @@
 
 <script>
 import axios from "axios";
+import Swal from "sweetalert2";
+
 export default {
   name: "ContactForm",
   props: ["url", "csrf_token"],
@@ -352,14 +361,30 @@ export default {
   },
   methods: {
     submitForm() {
+      this.loading = true;
+      console.log("This is the loading variable value", this.loading);
       axios
         .post(`${this.url}`, this.contact_form, {
           headers: {
             "X-CSRFToken": this.csrf_token,
           },
         })
-        .then((response) => (this.articleId = response.data.id));
-      console.log("AND the form submit has been triggered");
+        .then((response) => {
+          console.log(
+            "And this is the response from the server on sending the email"
+          );
+          Swal.fire({
+            title: "Success",
+            text: "Your email has been sent",
+            icon: "success",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#097969",
+          });
+        })
+        .finally(() => {
+          this.loading = false;
+          this.contact_form = {};
+        });
     },
   },
 };
