@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
+from smtplib import SMTPException
 import json
 
 
@@ -21,10 +22,17 @@ def contacts(request):
 		email = body['email']
 		message = body['message']
 
-		send_mail(name,message,email,['testmail@gmail.com'], fail_silently = False)
+		
 
-		return JsonResponse({'status':200, 'success': True})
-		# return render(request,'myapp/contacts.html')
+		try:
+			send_mail(name,message,email,['testmail@gmail.com'], fail_silently = False)
+
+			return JsonResponse({'status':200, 'success': True})
+
+		except SMTPException as e:
+
+			return JsonResponse({'status':200, 'success': False})
+
 	else:
 		return render(request,'myapp/contacts.html')
 
