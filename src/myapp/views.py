@@ -22,14 +22,13 @@ def contacts(request):
 		email = body['email']
 		message = body['message']
 
-		
-
+	
 		try:
 			send_mail(name,message,email,['testmail@gmail.com'], fail_silently = False)
 
 			return JsonResponse({'status':200, 'success': True})
 
-		except SMTPException as e:
+		except:
 
 			return JsonResponse({'status':200, 'success': False})
 
