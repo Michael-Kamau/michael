@@ -370,16 +370,25 @@ export default {
           },
         })
         .then((response) => {
-          console.log(
-            "And this is the response from the server on sending the email"
-          );
-          Swal.fire({
+         console.log('And this is the response from the server ', response)
+         if(response.data.success) {
+           Swal.fire({
             title: "Success",
             text: "Your email has been sent",
             icon: "success",
-            confirmButtonText: "Okay",
+            confirmButtonText: "Done",
             confirmButtonColor: "#097969",
           });
+         }else{
+           Swal.fire({
+            title: "Error",
+            text: "Error encountered sending your email",
+            icon: "error",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#932958",
+          });
+         }
+          
         })
         .finally(() => {
           this.loading = false;

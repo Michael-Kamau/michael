@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 import json
 
@@ -22,7 +22,9 @@ def contacts(request):
 		message = body['message']
 
 		send_mail(name,message,email,['testmail@gmail.com'], fail_silently = False)
-		return render(request,'myapp/contacts.html')
+
+		return JsonResponse({'status':200, 'success': True})
+		# return render(request,'myapp/contacts.html')
 	else:
 		return render(request,'myapp/contacts.html')
 
