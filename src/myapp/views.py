@@ -26,13 +26,13 @@ def contacts(request):
 
 	
 		try:
-			send_mail(name,'Email: '+email+'\n Message: '+message,config('EMAIL_FROM_ADDRESS'),['kamau.karitu@gmail.com'], fail_silently = False)
+			send_mail(name,'Email: '+email+'\nMessage: '+message,config('EMAIL_FROM_ADDRESS'),['kamau.karitu@gmail.com'], fail_silently = False)
 
 			return JsonResponse({'status':200, 'success': True})
 
-		except:
+		except  Exception as e:
 
-			return JsonResponse({'status':200, 'success': False})
+			return JsonResponse({'status':200, 'success': False,'error':str(e)})
 
 	else:
 		return render(request,'myapp/contacts.html')
