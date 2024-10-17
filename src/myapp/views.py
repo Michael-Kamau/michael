@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 from smtplib import SMTPException
+from decouple import config
+
 import json
 
 
@@ -24,7 +26,7 @@ def contacts(request):
 
 	
 		try:
-			send_mail(name,message,email,['testmail@gmail.com'], fail_silently = False)
+			send_mail(name,'Email: '+email+'\n Message: '+message,config('EMAIL_FROM_ADDRESS'),['kamau.karitu@gmail.com'], fail_silently = False)
 
 			return JsonResponse({'status':200, 'success': True})
 
