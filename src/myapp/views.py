@@ -26,7 +26,7 @@ def contacts(request):
 
 	
 		try:
-			send_mail(name,'Email: '+email+'\nMessage: '+message,config('EMAIL_FROM_ADDRESS'),['kamau.karitu@gmail.com'], fail_silently = False)
+			send_mail('Contact form Inquiry','Name: '+email+'\nEmail: '+email+'\nMessage: '+message,config('EMAIL_FROM_ADDRESS'),['kamau.karitu@gmail.com'], fail_silently = False)
 
 			return JsonResponse({'status':200, 'success': True})
 
